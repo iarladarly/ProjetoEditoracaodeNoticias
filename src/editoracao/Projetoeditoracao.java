@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoeditoracaodenoticias;
+package editoracao;
 
 /**
  *
  * @author Iarla darly
  */
-public class ProjetoEditoracaodeNoticias {
+public class Projetoeditoracao {
 
     /**
      * @param args the command line arguments
@@ -19,4 +19,3 @@ public class ProjetoEditoracaodeNoticias {
     }
     
 }
-
