@@ -264,26 +264,30 @@ public class cadastranoticia extends javax.swing.JFrame {
             String sub= subtitulo.getText();
             String l= link.getText() ;
             String tn= tiponoticia.getText();
-            String m= mes.getText();
             String comen= comentario.getText();
             String conteu= conteudo.getText();     
+            String m= mes.getText();
             
+          
+            PreparedStatement ptstmt= (PreparedStatement)conn.prepareStatement(sql);
             
-           PreparedStatement ptstmt= (PreparedStatement)conn.prepareStatement(sql);
-            ptstmt.setString(1,idtxt.getText());
-            
+            ptstmt.setString(1,idtxt.getText()); 
             ptstmt.setString(2,tit);
             ptstmt.setString(3,sub);
             ptstmt.setString(4,l);
             ptstmt.setString(5,tn); 
-            ptstmt.setString(6,m);
-            ptstmt.setString(7,comen);
-            ptstmt.setString(8,conteu);
+        
+            ptstmt.setString(6,comen);
+            ptstmt.setString(7,conteu);
+             ptstmt.setString(8,m);
                     
                     
            
             ptstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO");
+            
+             nuevo();
+            
             
             text.setText("\nCADASTRO DA NOTÍCIA REALIZADO\n\n\n"+"Titulo\n"+tit+"\nSubtitulo"+sub+"Link\n"+l+"Tipo de notícia:\n"+tn+"Mês: \n"+m);
             
@@ -297,9 +301,24 @@ public class cadastranoticia extends javax.swing.JFrame {
            
     }//GEN-LAST:event_button1ActionPerformed
     
-    /**
-     * @param args the command line arguments
-     */
+   
+        void nuevo() {
+        idtxt.setText("");
+        titulo.setText("");
+        subtitulo.setText("");
+        link.setText("");
+        tiponoticia.setText("");
+        mes.setText("");
+        comentario.setText("");
+        conteudo.setText("");
+        
+        //txtDNI.requestFocus();
+        
+       
+    }
+
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -345,21 +364,7 @@ public class cadastranoticia extends javax.swing.JFrame {
     
 
 
-       void nuevo() {
-        idtxt.setText("");
-        titulo.setText("");
-        subtitulo.setText("");
-        link.setText("");
-        tiponoticia.setText("");
-        mes.setText("");
-        comentario.setText("");
-        conteudo.setText("");
-        
-        //txtDNI.requestFocus();
-        
-       
-    }
-
+   
     
     
 
