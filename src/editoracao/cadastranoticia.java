@@ -36,19 +36,18 @@ public class cadastranoticia extends javax.swing.JFrame {
         link = new javax.swing.JTextField();
         label4 = new java.awt.Label();
         tiponoticia = new javax.swing.JTextField();
-        mes = new javax.swing.JFormattedTextField();
         mestxt = new java.awt.Label();
         comentariotxt = new java.awt.Label();
         jScrollPane1 = new javax.swing.JScrollPane();
         comentario = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        text = new javax.swing.JTextArea();
         conteudotxt = new java.awt.Label();
         button1 = new java.awt.Button();
         jScrollPane3 = new javax.swing.JScrollPane();
         conteudo = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        mes = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        text = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro notícias");
@@ -82,10 +81,8 @@ public class cadastranoticia extends javax.swing.JFrame {
         label4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         label4.setText("Tipo de notícia principal ou segundária:");
 
-        mes.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-
         mestxt.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        mestxt.setText("Mês:");
+        mestxt.setText("Mês e Dia:");
 
         comentariotxt.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         comentariotxt.setText("Comentário:");
@@ -93,10 +90,6 @@ public class cadastranoticia extends javax.swing.JFrame {
         comentario.setColumns(20);
         comentario.setRows(5);
         jScrollPane1.setViewportView(comentario);
-
-        text.setColumns(20);
-        text.setRows(5);
-        jScrollPane2.setViewportView(text);
 
         conteudotxt.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         conteudotxt.setText("Conteúdo:");
@@ -112,10 +105,26 @@ public class cadastranoticia extends javax.swing.JFrame {
         conteudo.setRows(5);
         jScrollPane3.setViewportView(conteudo);
 
-        jLabel3.setText("Não preencha esse campo");
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Informações do cadastro notícias, campo automático");
+
+        text.setEditable(false);
+        text.setBackground(new java.awt.Color(204, 255, 255));
+        text.setColumns(20);
+        text.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        text.setRows(5);
+        text.setDisabledTextColor(new java.awt.Color(204, 255, 255));
+        text.setEnabled(false);
+        text.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                textAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane4.setViewportView(text);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,8 +153,8 @@ public class cadastranoticia extends javax.swing.JFrame {
                                         .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(19, 19, 19)
-                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(42, 42, 42)
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(titulo, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(subtitulo, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(link)))
@@ -165,21 +174,16 @@ public class cadastranoticia extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane3)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane3))
                                 .addGap(6, 6, 6)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 550, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(0, 431, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,18 +197,12 @@ public class cadastranoticia extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2)
-                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
+                        .addComponent(jLabel4)
+                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,22 +218,29 @@ public class cadastranoticia extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tiponoticia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comentariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(conteudotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
+
+        mestxt.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,61 +250,61 @@ public class cadastranoticia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/editoracao", "root", "");
+
+            String sql = "insert into cadastronoticia values(?,?,?,?,?,?,?,?)";
+
+            String tit= titulo.getText();
+            String sub= subtitulo.getText();
+            String l= link.getText() ;
+            String tn= tiponoticia.getText();
+            String comen= comentario.getText();
+            String conteu= conteudo.getText();
+            String m= mes.getText();
+
+            PreparedStatement ptstmt= (PreparedStatement)conn.prepareStatement(sql);
+
+            ptstmt.setString(1,idtxt.getText());
+            ptstmt.setString(2,tit);
+            ptstmt.setString(3,sub);
+            ptstmt.setString(4,l);
+            ptstmt.setString(5,tn);
+            ptstmt.setString(6,comen);
+            ptstmt.setString(7,conteu);
+            ptstmt.setString(8, m);
+            
+
+            ptstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO");
+
+            nuevo();
+
+            text.setText("\nCADASTRO DA NOTÍCIA REALIZADO\n\n\n"+"\nMês: "+m+"\nTitulo: "+tit+"\nSubtitulo: "+sub+"\nLink: "+l+"\nTipo de notícia: "+tn
+                    +"\nComentário: "+comen+"\nConteúdo: ");
+
+            conn.close();
+
+        }
+
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }//GEN-LAST:event_button1ActionPerformed
+
     private void label7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label7MouseClicked
         modulonoticia obj = new modulonoticia();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_label7MouseClicked
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-       
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-             Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/editoracao", "root", "");
-            
-            String sql = "insert into cadastronoticia values(?,?,?,?,?,?,?,?)";
-            
-          
-            String tit= titulo.getText();
-            String sub= subtitulo.getText();
-            String l= link.getText() ;
-            String tn= tiponoticia.getText();
-            String comen= comentario.getText();
-            String conteu= conteudo.getText();     
-            String m= mes.getText();
-            
-          
-            PreparedStatement ptstmt= (PreparedStatement)conn.prepareStatement(sql);
-            
-            ptstmt.setString(1,idtxt.getText()); 
-            ptstmt.setString(2,tit);
-            ptstmt.setString(3,sub);
-            ptstmt.setString(4,l);
-            ptstmt.setString(5,tn); 
-        
-            ptstmt.setString(6,comen);
-            ptstmt.setString(7,conteu);
-             ptstmt.setString(8,m);
-                    
-                    
-           
-            ptstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO");
-            
-             nuevo();
-            
-            
-            text.setText("\nCADASTRO DA NOTÍCIA REALIZADO\n\n\n"+"Titulo\n"+tit+"\nSubtitulo"+sub+"Link\n"+l+"Tipo de notícia:\n"+tn+"Mês: \n"+m);
-            
-            conn.close();
-            
-        } 
-        
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }   
-           
-    }//GEN-LAST:event_button1ActionPerformed
+    private void textAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_textAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAncestorAdded
     
    
         void nuevo() {
@@ -307,10 +312,10 @@ public class cadastranoticia extends javax.swing.JFrame {
         titulo.setText("");
         subtitulo.setText("");
         link.setText("");
-        tiponoticia.setText("");
-        mes.setText("");
+        tiponoticia.setText(""); 
         comentario.setText("");
         conteudo.setText("");
+        mes.setText("");
         
         //txtDNI.requestFocus();
         
@@ -353,20 +358,6 @@ public class cadastranoticia extends javax.swing.JFrame {
             }
         });
     }
-    
-    
-    
-      
-
-   
-        
-        
-    
-
-
-   
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
@@ -377,18 +368,17 @@ public class cadastranoticia extends javax.swing.JFrame {
     private javax.swing.JTextField idtxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private java.awt.Label label1;
     private java.awt.Label label4;
     private java.awt.Label label7;
     private javax.swing.JTextField link;
     private java.awt.Label linktxt;
-    private javax.swing.JFormattedTextField mes;
+    private javax.swing.JTextField mes;
     private java.awt.Label mestxt;
     private javax.swing.JTextField subtitulo;
     private java.awt.Label subtitulotxt;
