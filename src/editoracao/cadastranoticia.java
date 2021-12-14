@@ -278,7 +278,7 @@ public class cadastranoticia extends javax.swing.JFrame {
             ptstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO");
 
-            nuevo();
+            novo();
 
             text.setText("\nCADASTRO DA NOTÍCIA REALIZADO\n\n\n"+"\nMês: "+m+"\nTitulo: "+tit+"\nSubtitulo: "+sub+"\nLink: "+l+"\nTipo de notícia: "+tn
                     +"\nComentário: "+comen+"\nConteúdo: ");
@@ -304,7 +304,7 @@ public class cadastranoticia extends javax.swing.JFrame {
     }//GEN-LAST:event_textAncestorAdded
     
    
-        void nuevo() {
+        void novo() {
         idtxt.setText("");
         titulo.setText("");
         subtitulo.setText("");
@@ -314,7 +314,7 @@ public class cadastranoticia extends javax.swing.JFrame {
         conteudo.setText("");
         mes.setText("");
         
-        //txtDNI.requestFocus();
+   
         
        
     }
