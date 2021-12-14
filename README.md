@@ -1,1 +1,1 @@
-# ProjetoEditoracaodenoticias
+# ProjetoEditoracaodeNoticias
