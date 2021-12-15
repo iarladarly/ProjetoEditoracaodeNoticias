@@ -1,8 +1,9 @@
 
 package editoracao;
-import com.mysql.jdbc.Connection;
+//import com.mysql.jdbc.Connection;
 
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 
