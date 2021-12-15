@@ -315,10 +315,7 @@ public class cadastranoticia extends javax.swing.JFrame {
         tiponoticia.setText(""); 
         comentario.setText("");
         conteudo.setText("");
-        mes.setText("");
-        
-   
-        
+        mes.setText("");   
        
     }
 

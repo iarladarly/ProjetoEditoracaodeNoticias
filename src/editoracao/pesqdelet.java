@@ -24,7 +24,7 @@ public class pesqdelet extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaDatos = new javax.swing.JTable();
+        TablelaDados = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         dsid = new javax.swing.JTextField();
@@ -47,7 +47,7 @@ public class pesqdelet extends javax.swing.JFrame {
         label1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         label1.setText("Pesquisar para deletar notícias");
 
-        TablaDatos.setModel(new javax.swing.table.DefaultTableModel(
+        TablelaDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -55,16 +55,16 @@ public class pesqdelet extends javax.swing.JFrame {
                 "ID", "Título", "Subtítulo", "Link", "Tipo de notícia pricipal ou segundária", "Mês", "Comentário", "Conteúdo"
             }
         ));
-        TablaDatos.addAncestorListener(new javax.swing.event.AncestorListener() {
+        TablelaDados.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                TablaDatosAncestorAdded(evt);
+                TablelaDadosAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(TablaDatos);
+        jScrollPane1.setViewportView(TablelaDados);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Voltar");
@@ -142,9 +142,9 @@ public class pesqdelet extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dsid, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(dsid))
                 .addContainerGap(161, Short.MAX_VALUE))
         );
 
@@ -169,7 +169,7 @@ public class pesqdelet extends javax.swing.JFrame {
             String sql = "select *from cadastronoticia";
             PreparedStatement ptst = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = (ResultSet) ptst.executeQuery();
-            DefaultTableModel tm = (DefaultTableModel) TablaDatos.getModel();
+            DefaultTableModel tm = (DefaultTableModel) TablelaDados.getModel();
             tm.setRowCount(0);
             
   
@@ -218,16 +218,11 @@ public class pesqdelet extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dsidActionPerformed
 
-    private void TablaDatosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TablaDatosAncestorAdded
+    private void TablelaDadosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TablelaDadosAncestorAdded
        
 
-    }//GEN-LAST:event_TablaDatosAncestorAdded
+    }//GEN-LAST:event_TablelaDadosAncestorAdded
 
-        
-    
-    
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -268,7 +263,7 @@ public class pesqdelet extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaDatos;
+    private javax.swing.JTable TablelaDados;
     private javax.swing.JTextField dsid;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
