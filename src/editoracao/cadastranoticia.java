@@ -112,12 +112,13 @@ public class cadastranoticia extends javax.swing.JFrame {
         jLabel4.setText("Informações do cadastro notícias, campo automático");
 
         text.setEditable(false);
-        text.setBackground(new java.awt.Color(204, 255, 255));
+        text.setBackground(new java.awt.Color(153, 255, 255));
         text.setColumns(20);
         text.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
         text.setRows(5);
-        text.setDisabledTextColor(new java.awt.Color(204, 255, 255));
+        text.setDisabledTextColor(new java.awt.Color(0, 51, 51));
         text.setEnabled(false);
+        text.setSelectionColor(new java.awt.Color(51, 51, 51));
         text.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
