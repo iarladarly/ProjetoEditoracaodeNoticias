@@ -1,10 +1,5 @@
 
 package editoracao;
-
-
-
-
-
 public class modulonoticia extends javax.swing.JFrame {
 
     

@@ -1,11 +1,13 @@
 
 package editoracao;
-//import com.mysql.jdbc.Connection;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 
 import javax.swing.JOptionPane;
+
 
 
 
@@ -262,7 +264,7 @@ public class cadastranoticia extends javax.swing.JFrame {
             String l= link.getText() ;
             String tn= tiponoticia.getText();
             String comen= comentario.getText();
-            String conteu= conteudo.getText();
+            String cont= conteudo.getText();
             String m= mes.getText();
 
             PreparedStatement ptstmt= (PreparedStatement)conn.prepareStatement(sql);
@@ -273,7 +275,7 @@ public class cadastranoticia extends javax.swing.JFrame {
             ptstmt.setString(4,l);
             ptstmt.setString(5,tn);
             ptstmt.setString(6,comen);
-            ptstmt.setString(7,conteu);
+            ptstmt.setString(7,cont);
             ptstmt.setString(8, m);
             
 
@@ -283,7 +285,7 @@ public class cadastranoticia extends javax.swing.JFrame {
             novo();
 
             text.setText("\nCADASTRO DA NOTÍCIA REALIZADO\n\n\n"+"\nMês: "+m+"\nTitulo: "+tit+"\nSubtitulo: "+sub+"\nLink: "+l+"\nTipo de notícia: "+tn
-                    +"\nComentário: "+comen+"\nConteúdo: ");
+                    +"\nComentário: "+comen+"\nConteúdo: "+cont);
 
             conn.close();
 

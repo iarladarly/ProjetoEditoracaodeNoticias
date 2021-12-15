@@ -5,10 +5,6 @@
  */
 package editoracao;
 
-/**
- *
- * @author Iarla darly
- */
 public class Projetoeditoracao {
 
     /**
